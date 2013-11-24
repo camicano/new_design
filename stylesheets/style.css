@@ -28,22 +28,19 @@ body {
 	cursor: pointer;
 }
 
+.fa {
+	margin-bottom: 20px;
+}
+
+.fa:hover {
+	color: #138bff;
+	cursor: pointer;
+}
+
 #logo {
 	width: 350px;
 	margin-top: 20px;
 	margin-bottom: 20px;
-}
-
-#footer {
-	background-color: #bcce00;
-	width: 100%;
-	margin: 0px;
-	padding: 20px;
-}
-
-#footer div, i {
-	margin: 7px;
-	text-align: center;
 }
 
 h1 {
