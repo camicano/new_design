@@ -6,7 +6,7 @@
     <title>Preventis</title>
     <link href='http://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="scripts/animate.min.css">
+    <link rel="stylesheet" href="stylesheets/animate.min.css">
     <link rel="stylesheet" href="stylesheets/foundation.css" /> 
     <link rel="stylesheet" href="stylesheets/foundation.min.css" /> 
     <link rel="stylesheet" href="stylesheets/normalize.css" />
@@ -20,88 +20,174 @@
     <script src="scripts/script.js"></script>    
   </head>
   <body>
-    <div id='header' class='row'>
-      <div class='large-12 columns'>
-        <img id='logo' src='image/logo2.png' />           
+    <script id='view-template-1' type="text/x-handlebars-template">
+      <div class="large-12 columns">
+        <div class="large-offset-4">
+          {{image}}
+        </div>
+        
+        <h3>{{title}}</h3>
+        <div class="large-6 columns">
+          {{content}}
+        </div>
       </div>
-    </div>
+    </script>
     
-    <div class='row'>
-      <div id='content' class='large-12 columns'>
-        <p><em>Nuestra misión es prevenir la enfermedad, mantener o recuperar la salud y promover estilos de vida saludable en la población dominicana.</em></p>
-        <img src='image/familia.png'>
-        <br>
-        <br>
-        <i class="fa fa-chevron-down fa-3x"></i>
-      </div>
-      <div id='menu' class='large-12 columns'> 
-        <hr>
-        <div class='window inactive' id='articulo'>
-          <h1 class='botton'>Articulo Del Mes</h1> 
-          <div class='container'></div>
+    <div id='main-container'>
+        <div id='header' class='large-12 columns'>
+          <img id='logo' src='image/logo2.png' />           
+          
+          <!-- desktop menu -->
+          <div id='desktop-menu'>     
+            <div class='menu-item'>
+              <h2>Nuestra Empresa</h2>
+            </div>
+
+            <div class='menu-item'>
+              <h2>Promocion &amp; Prevencion</h2> 
+            </div>
+
+            <div  class='menu-item' id='medicina'>
+              <h2>Medicina</h2>
+            </div>
+
+            <div class='menu-item'>
+              <h2>Odontologia</h2>
+            </div>       
+
+            <div  class='menu-item' id='medicina'>
+              <h2>Contactenos</h2>
+            </div>
+          </div>
         </div>
         
-        <hr>
-        <div  class='window inactive' id='medicina'>
-          <h1 class='botton'>Medicina</h1>
-          <div class='container'></div>          
-        </div>
+        <div class='large-12 columns'>
+          <div id='main-pic'>
+            <div  id='content'>
+              <br>
+              <br>
+              <img src='image/familia.png'>
+              <p><em>Nuestra misión es prevenir la enfermedad, mantener o recuperar la salud y promover estilos de vida saludable en la población dominicana.</em></p>
+              <br>
+            </div>            
+          </div>
+          
+          <div id='desktop-content'>
+            <hr>
+            <h1>Articulo Del Mes</h1>
+            <h3>Diabetes</h3>
+            
+            <div>
+              <img class='imgs' src="./image/diabetes.jpg" />
+            </div>
+          
+            <div class='column'>
+              <p>La diabetes es una enfermedad en la que los niveles de glucosa (azucar) de la sangre están muy altos. La diabetes es una afección cronica que se desencadena los tejidos. Como resultado, una persona con diabetes no absorbe la glucosa adecuadamente, de modo que esta queda circulando en la sangre (hiperglucemia) y dañando los tejidos con el paso del tiempo. Este deterioro causa complicaciones para la salud potencialmente letales.
+              </p>
+            </div>
+            <div class='column'>
+              <p>cuando el organismo pierde su capacidad de producir suficiente insulina o de utilizarla con eficacia. La insulina es una hormona que se fabrica en el pancreas y que permite que la glucosa de los alimentos pase a las celulas del organismo, en donde se convierte en energia para que funcionen los músculos y 
+              </p>
+            </div>
+            <hr>
+            <h1>Promocion &amp; Prevencion</h1>
+            <div>
+              <img class='imgs' src='image/t2.png'>  
+            </div>
+            <div class='column'>
+              <p>La diabetes es una enfermedad en la que los niveles de glucosa (azucar) de la sangre están muy altos. La diabetes es una afección cronica que se desencadena los tejidos. Como resultado, una persona con diabetes no absorbe la glucosa adecuadamente, de modo que esta queda circulando en la sangre (hiperglucemia) y dañando los tejidos con el paso del tiempo. Este deterioro causa complicaciones para la salud potencialmente letales.
+              </p>
+            </div>
 
-        <hr>
-        <div class='window inactive'>
-          <h1 class='botton'>Odontologia</h1>
-          <div class='container'></div>
-        </div>
+            <hr>
+            <h1>Unidad Movil</h1>
+            <div>
+              <img class='imgs' src='image/van.jpg'>  
+            </div>
 
-        <hr>
-        <div class='window inactive'>
-          <h1 class='botton'>Promocion &amp; Prevencion</h1> 
-          <div class='container'></div>         
-        </div>
+            <div class='column'>
+              <p>La diabetes es una enfermedad en la que los niveles de glucosa (azucar) de la sangre están muy altos. La diabetes es una afección cronica que se desencadena los tejidos. Como resultado, una persona con diabetes no absorbe la glucosa adecuadamente, de modo que esta queda circulando en la sangre (hiperglucemia) y dañando los tejidos con el paso del tiempo. Este deterioro causa complicaciones para la salud potencialmente letales.
+              </p>
+            </div>
 
-        <hr>
-        <div class='window inactive'>
-          <h1 class='botton'>Laboratorios</h1>
-          <div class='container'></div>
-        </div>
+            <hr>
+            <h1>Nuestros Clientes</h1>
+            
+            <div class='column2'>
+              <img src='image/clientes/imgres.jpg'>
+              <img src='image/clientes/imgres-1.jpg'>
+              <img src='image/clientes/imgres-2.jpg'>
+              <img src='image/clientes/imgres-3.jpg'>
+              <img src='image/clientes/imgres-4.jpg'>
+              <img src='image/clientes/imgres-5.jpg'>
+            </div>
 
-        <hr>
-        <div class='window inactive'>
-          <h1 class='botton'>Unidad Mobil</h1>
-          <div class='container'></div>
-        </div>
+            <hr>
+            <br>
+          </div>
+          
+          <!-- mobile menu -->
+          <div id='mobile-menu' class='large-12 columns'> 
+            <hr>
+            <div class='window inactive' id='articulo'>
+              <h1 class='botton'>Articulo Del Mes</h1> 
+              <div class='container'></div>
+            </div>
 
-        <hr>
-        <div class='window inactive'>
-          <h1 class='botton'>Acerca de Nuestra Empresa</h1>
-          <div class='container'></div>
-        </div>
-        
-        <hr>
-        <div class='window inactive' >
-          <h1 class='botton'>Sedes &amp; Oficinas</h1>
-          <div class='container'></div>
-        </div>
+            <hr>
+            <div class='window inactive'>
+              <h1 class='botton'>Promocion &amp; Prevencion</h1> 
+              <div class='container'></div>         
+            </div>
+            
+            <hr>
+            <div  class='window inactive' id='medicina'>
+              <h1 class='botton'>Medicina</h1>
+              <div class='container'></div>          
+            </div>
 
-        <hr>
-        <div class='window inactive'>
-          <h1 class='botton'>Contactenos</h1>
-          <div class='container'></div>
+            <hr>
+            <div class='window inactive'>
+              <h1 class='botton'>Odontologia</h1>
+              <div class='container'></div>
+            </div>
+
+            <hr>
+            <div class='window inactive'>
+              <h1 class='botton'>Laboratorios</h1>
+              <div class='container'></div>
+            </div>
+
+            <hr>
+            <div class='window inactive'>
+              <h1 class='botton'>Unidad Mobil</h1>
+              <div class='container'></div>
+            </div>
+
+            <hr>
+            <div class='window inactive'>
+              <h1 class='botton'>Nuestra Empresa</h1>
+              <div class='container'></div>
+            </div>
+
+            <hr>
+            <div class='window inactive'>
+              <h1 class='botton'>Contactenos</h1>
+              <div class='container'></div>
+            </div>
+            <hr>
+            <br>
+          </div>
         </div>
-      </div>
+    
+        <div id='footer'>
+          <h3>Tel: [1-809] 583 7775 / 76 - Fax: [1-809] 583 7774 - preventis@preventis.com.do</h3>
+        </div>
     </div>
-<!-- 
-    <div id='footer'>
-      <div>
-        <h3>Tel: [1-809] 583 7775 / 76</h3>
-      </div>
-      <div>
-        <h3>Fax: [1-809] 583 7774</h3>
-      </div>
-      <div>
-        <h3>preventis@preventis.com.do</h3>
-      </div>
-    </div> -->
+    <div id='logo-bottom'>
+      <img src='image/logo-bottom.jpg'>
+      <p class='disclaimer'>copy righted 2014</p>
+    </div>
   </body>
 </html>
 
